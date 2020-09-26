@@ -3,7 +3,8 @@ import Layout from "app/layouts/Layout"
 import { Head, Link, usePaginatedQuery, useRouter, BlitzPage } from "blitz"
 import getQuestions from "app/questions/queries/getQuestions"
 import updateChoice from "app/choices/mutations/updateChoice"
-
+import ReactDOM from "react-dom"
+import questions from "app/questions/queries/getQuestions"
 const ITEMS_PER_PAGE = 100
 
 export const QuestionsList = () => {
@@ -57,10 +58,8 @@ const QuestionsPage: BlitzPage = () => {
       <Head>
         <title>Questions</title>
       </Head>
-
       <main>
         <h1>Questions</h1>
-
         <p>
           <Link href="/questions/new">
             <a>Create Question</a>
