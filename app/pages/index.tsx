@@ -7,7 +7,7 @@ import { LabeledTextField } from "app/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/components/Form"
 import login from "app/auth/mutations/login"
 import { LoginInput, LoginInputType } from "app/auth/validations"
-import { CurrentUser } from "app/pages/CurrentUser"
+import { CurrentUser } from "./CurrentUser"
 type LoginFormProps = {
   onSuccess?: () => void
   onLogOut?: () => void
