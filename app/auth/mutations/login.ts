@@ -1,7 +1,7 @@
 import { SessionContext } from "blitz"
 import { authenticateUser } from "app/auth/auth-utils"
 import { LoginInput, LoginInputType } from "../validations"
-
+export let LogIn = false
 export default async function login(input: LoginInputType, ctx: { session?: SessionContext } = {}) {
   // This throws an error if input is invalid
   const { email, password } = LoginInput.parse(input)
@@ -10,6 +10,6 @@ export default async function login(input: LoginInputType, ctx: { session?: Sess
   const user = await authenticateUser(email, password)
 
   await ctx.session!.create({ userId: user.id, roles: [user.role] })
-
+  LogIn = true
   return user
 }
